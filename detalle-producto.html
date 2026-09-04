@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Detalle de productos de Game Zone.">
+
+    <title>Detalle del producto | Game Zone</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Nuestro CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <div class="container">
+
+                <!-- Logo -->
+
+                <a class="navbar-brand" href="index.html">
+
+                    <img
+                        src="IMG/logo-game-zone.jpeg"
+                        alt="Logo de Game Zone"
+                        class="logo-tienda">
+
+                </a>
+
+                <!-- Botón para celulares -->
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <!-- Menú -->
+
+                <div
+                    class="collapse navbar-collapse"
+                    id="menuPrincipal">
+
+                    <ul class="navbar-nav ms-lg-4 align-items-lg-center">
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="index.html">
+                                Inicio
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link active" href="productos.html">
+                                Productos
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="nosotros.html">
+                                Nosotros
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="blogs.html">
+                                Blog
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="contacto.html">
+                                Contacto
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="carrito.html">
+
+                                🛒 Carrito
+
+                                <span
+                                    id="cantidad-carrito"
+                                    class="badge bg-warning text-dark">
+
+                                    0
+
+                                </span>
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="btn btn-warning ms-lg-2 mt-2 mt-lg-0"
+                                href="login.html">
+
+                                Iniciar sesión
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main>
+
+        <!-- ENCABEZADO DE LA PÁGINA -->
+
+        <section class="encabezado-pagina text-white text-center py-5">
+
+            <div class="container">
+
+                <h1>Detalle del producto</h1>
+
+                <p>
+                    Revisa las características del producto seleccionado.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- PRODUCTO GENERADO CON JAVASCRIPT -->
+
+        <section class="container py-5">
+
+            <div
+                id="detalle-producto"
+                class="detalle-producto">
+
+                <!-- JavaScript mostrará aquí el producto -->
+
+            </div>
+
+            <!-- Mensaje cuando el producto no existe -->
+
+            <div
+                id="producto-no-encontrado"
+                class="alert alert-danger text-center d-none">
+
+                <h2>Producto no encontrado</h2>
+
+                <p>
+                    El producto seleccionado no existe.
+                </p>
+
+                <a
+                    href="productos.html"
+                    class="btn btn-dark">
+
+                    Volver a productos
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- BOTÓN PARA VOLVER -->
+
+        <section class="container text-center pb-5">
+
+            <a
+                href="productos.html"
+                class="btn btn-outline-dark">
+
+                ← Volver al catálogo
+
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="pie-pagina text-white py-5">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <h2 class="h4">
+                        Game Zone
+                    </h2>
+
+                    <p>
+                        Tienda online de videojuegos,
+                        consolas y accesorios gamer.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <h2 class="h4">
+                        Enlaces
+                    </h2>
+
+                    <ul class="list-unstyled">
+
+                        <li>
+                            <a href="index.html">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="productos.html">
+                                Productos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="nosotros.html">
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contacto.html">
+                                Contacto
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <h2 class="h4">
+                        Contacto
+                    </h2>
+
+                    <p>
+                        Correo: contacto@gamezone.cl
+                    </p>
+
+                    <p>
+                        Teléfono: +56 9 1234 5678
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="text-center mb-0">
+                Game Zone © 2026 - Proyecto académico
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Nuestro JavaScript -->
+
+    <script src="JS/main.js"></script>
+
+
+</body>
+
+</html> 

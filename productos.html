@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Catálogo de consolas y accesorios de Game Zone.">
+
+    <title>Productos | Game Zone</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Nuestro CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <div class="container">
+
+                <!-- Logo -->
+
+                <a class="navbar-brand" href="index.html">
+
+                    <img
+                        src="IMG/logo-game-zone.jpeg"
+                        alt="Logo de Game Zone"
+                        class="logo-tienda">
+
+                </a>
+
+                <!-- Botón para celular -->
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <!-- Menú -->
+
+                <div
+                    class="collapse navbar-collapse"
+                    id="menuPrincipal">
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="index.html">
+
+                                Inicio
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link active"
+                                href="productos.html">
+
+                                Productos
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="nosotros.html">
+
+                                Nosotros
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="blogs.html">
+
+                                Blog
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="contacto.html">
+
+                                Contacto
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="carrito.html">
+
+                                🛒 Carrito
+
+                                <span
+                                    id="cantidad-carrito"
+                                    class="badge bg-warning text-dark">
+
+                                    0
+
+                                </span>
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="btn btn-warning ms-lg-2 mt-2 mt-lg-0"
+                                href="login.html">
+
+                                Iniciar sesión
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main>
+
+        <!-- ENCABEZADO DEL CATÁLOGO -->
+
+        <section class="encabezado-pagina text-white text-center py-5">
+
+            <div class="container">
+
+                <h1>Nuestros productos</h1>
+
+                <p>
+                    Encuentra consolas y accesorios
+                    para mejorar tu experiencia gamer.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- BUSCADOR Y FILTROS -->
+
+        <section class="container pt-5">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-8">
+
+                    <form
+                        id="formulario-busqueda"
+                        class="row g-3">
+
+                        <div class="col-md-8">
+
+                            <label
+                                for="buscador-productos"
+                                class="form-label">
+
+                                Buscar un producto
+
+                            </label>
+
+                            <input
+                                id="buscador-productos"
+                                class="form-control"
+                                type="search"
+                                placeholder="Ejemplo: PlayStation, Xbox o teclado">
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <label
+                                for="filtro-categoria"
+                                class="form-label">
+
+                                Categoría
+
+                            </label>
+
+                            <select
+                                id="filtro-categoria"
+                                class="form-select">
+
+                                <option value="Todos">
+                                    Todos
+                                </option>
+
+                                <option value="Consolas">
+                                    Consolas
+                                </option>
+
+                                <option value="Accesorios">
+                                    Accesorios
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- LISTA GENERADA POR JAVASCRIPT -->
+
+        <section class="container py-5">
+
+            <div
+                id="lista-productos"
+                class="row">
+
+            </div>
+
+            <div
+                id="mensaje-sin-productos"
+                class="alert alert-warning text-center d-none">
+
+                No encontramos productos con esa búsqueda.
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="bg-dark text-white py-4">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+
+                    <h4>Game Zone</h4>
+
+                    <p>
+                        Tienda online de videojuegos,
+                        consolas y accesorios.
+                    </p>
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+
+                    <h4>Enlaces</h4>
+
+                    <ul class="list-unstyled">
+
+                        <li>
+                            <a
+                                class="text-white"
+                                href="index.html">
+
+                                Inicio
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                class="text-white"
+                                href="nosotros.html">
+
+                                Nosotros
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                class="text-white"
+                                href="contacto.html">
+
+                                Contacto
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+
+                    <h4>Contacto</h4>
+
+                    <p>Correo: contacto@gamezone.cl</p>
+                    <p>Teléfono: +56 9 1234 5678</p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="text-center mb-0">
+                Game Zone © 2026 - Proyecto académico
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Nuestro JavaScript -->
+
+    <script src="JS/main.js"></script>
+
+</body>
+
+</html>
