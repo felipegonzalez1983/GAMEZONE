@@ -504,11 +504,11 @@ textarea.form-control {
    DETALLE DEL PRODUCTO
 ========================================= */
 
-.detalle-prducto {
+.detalle-producto {
     margin-top: 20px;
 }
 
-.prodcto-detalle-imagen {
+.producto-detalle-imagen {
     min-height: 450px;
     display: flex;
     align-items: center;
