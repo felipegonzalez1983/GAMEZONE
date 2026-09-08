@@ -950,7 +950,7 @@ document.addEventListener(
         mostrarDetalleProducto();
         mostrarCarrito();
         actualizarCantidadCarrito();
-        validarFormularioContacto
+        validarFormularioContacto();
 
 
         const buscador =
