@@ -193,13 +193,72 @@ function mostrarTodosLosProductos() {
     const contenedor =
         document.getElementById("lista-productos");
 
+    const mensaje =
+        document.getElementById("mensaje-sin-productos");
+
     if (contenedor === null) {
         return;
     }
 
+    // Obtener los valores del buscador y del filtro
+    const buscador =
+        document.getElementById("buscador-productos");
+
+    const filtro =
+        document.getElementById("filtro-categoria");
+
+
+    const textoBusqueda =
+        buscador ? buscador.value.toLowerCase().trim() : "";
+
+    const categoriaSeleccionada =
+        filtro ? filtro.value : "Todos";
+
+
+    // Filtrar productos
+    const productosFiltrados =
+        productos.filter(function (producto) {
+
+            const coincideBusqueda =
+                producto.nombre.toLowerCase().includes(textoBusqueda) ||
+                producto.descripcion.toLowerCase().includes(textoBusqueda) ||
+                producto.categoria.toLowerCase().includes(textoBusqueda) ||
+                producto.plataforma.toLowerCase().includes(textoBusqueda);
+
+            const coincideCategoria =
+                categoriaSeleccionada === "Todos" ||
+                producto.categoria === categoriaSeleccionada;
+
+
+            return coincideBusqueda && coincideCategoria;
+
+        });
+
+
+    // Limpiar productos anteriores
     contenedor.innerHTML = "";
 
-    productos.forEach(function (producto) {
+
+    // Mostrar mensaje si no hay resultados
+    if (productosFiltrados.length === 0) {
+
+        if (mensaje !== null) {
+            mensaje.classList.remove("d-none");
+        }
+
+        return;
+
+    }
+
+
+    // Ocultar mensaje
+    if (mensaje !== null) {
+        mensaje.classList.add("d-none");
+    }
+
+
+    // Mostrar productos filtrados
+    productosFiltrados.forEach(function (producto) {
 
         contenedor.innerHTML += `
             <article class="col-lg-4 col-md-6 mb-4">
@@ -891,6 +950,323 @@ document.addEventListener(
         mostrarDetalleProducto();
         mostrarCarrito();
         actualizarCantidadCarrito();
+        validarFormularioContacto();
+
+
+        const buscador =
+            document.getElementById("buscador-productos");
+
+        const filtro =
+            document.getElementById("filtro-categoria");
+
+
+        if (buscador !== null) {
+
+            buscador.addEventListener(
+                "input",
+                mostrarTodosLosProductos
+            );
+
+        }
+
+
+        if (filtro !== null) {
+
+            filtro.addEventListener(
+                "change",
+                mostrarTodosLosProductos
+            );
+
+        }
 
     }
 );
+
+/* =========================================
+   VALIDACIÓN FORMULARIO DE CONTACTO
+========================================= */
+
+function validarFormularioContacto() {
+
+    const formulario =
+        document.getElementById("formulario-contacto");
+
+    if (formulario === null) {
+        return;
+    }
+
+
+    const nombre =
+        document.getElementById("nombre");
+
+    const correo =
+        document.getElementById("correo");
+
+    const comentario =
+        document.getElementById("comentario");
+
+
+    const errorNombre =
+        document.getElementById("error-nombre");
+
+    const errorCorreo =
+        document.getElementById("error-correo");
+
+    const errorComentario =
+        document.getElementById("error-comentario");
+
+    const mensajeExito =
+        document.getElementById("mensaje-exito");
+
+    const contadorComentario =
+        document.getElementById("contador-comentario");
+
+
+    /* =========================
+       VALIDAR NOMBRE
+    ========================== */
+
+    nombre.addEventListener("input", function () {
+
+        if (nombre.value.trim() === "") {
+
+            errorNombre.textContent =
+                "El nombre es obligatorio.";
+
+            nombre.classList.add("campo-error");
+            nombre.classList.remove("campo-correcto");
+
+        } else if (nombre.value.length > 100) {
+
+            errorNombre.textContent =
+                "El nombre no puede superar los 100 caracteres.";
+
+            nombre.classList.add("campo-error");
+            nombre.classList.remove("campo-correcto");
+
+        } else {
+
+            errorNombre.textContent = "";
+
+            nombre.classList.remove("campo-error");
+            nombre.classList.add("campo-correcto");
+
+        }
+
+    });
+
+
+    /* =========================
+       VALIDAR CORREO
+    ========================== */
+
+    correo.addEventListener("input", function () {
+
+        const valorCorreo =
+            correo.value.trim().toLowerCase();
+
+        const regexCorreo =
+            /^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+
+
+        if (valorCorreo === "") {
+
+            errorCorreo.textContent =
+                "El correo es obligatorio.";
+
+            correo.classList.add("campo-error");
+            correo.classList.remove("campo-correcto");
+
+        }
+
+        else if (correo.value.length > 100) {
+
+            errorCorreo.textContent =
+                "El correo no puede superar los 100 caracteres.";
+
+            correo.classList.add("campo-error");
+            correo.classList.remove("campo-correcto");
+
+        }
+
+        else if (!regexCorreo.test(valorCorreo)) {
+
+            errorCorreo.textContent =
+                "Solo se permiten correos @duoc.cl, @profesor.duoc.cl o @gmail.com.";
+
+            correo.classList.add("campo-error");
+            correo.classList.remove("campo-correcto");
+
+        }
+
+        else {
+
+            errorCorreo.textContent = "";
+
+            correo.classList.remove("campo-error");
+            correo.classList.add("campo-correcto");
+
+        }
+
+    });
+
+
+    /* =========================
+       CONTADOR DE COMENTARIO
+    ========================== */
+
+    comentario.addEventListener("input", function () {
+
+        const cantidad =
+            comentario.value.length;
+
+        contadorComentario.textContent =
+            cantidad + " / 500 caracteres";
+
+
+        if (comentario.value.trim() === "") {
+
+            errorComentario.textContent =
+                "El comentario es obligatorio.";
+
+            comentario.classList.add("campo-error");
+            comentario.classList.remove("campo-correcto");
+
+        }
+
+        else {
+
+            errorComentario.textContent = "";
+
+            comentario.classList.remove("campo-error");
+            comentario.classList.add("campo-correcto");
+
+        }
+
+    });
+
+
+    /* =========================
+       ENVIAR FORMULARIO
+    ========================== */
+
+    formulario.addEventListener("submit", function (evento) {
+
+        evento.preventDefault();
+
+
+        let formularioValido = true;
+
+
+        /* VALIDAR NOMBRE */
+
+        if (nombre.value.trim() === "") {
+
+            errorNombre.textContent =
+                "El nombre es obligatorio.";
+
+            nombre.classList.add("campo-error");
+
+            formularioValido = false;
+
+        }
+
+
+        /* VALIDAR CORREO */
+
+        const valorCorreo =
+            correo.value.trim().toLowerCase();
+
+        const regexCorreo =
+            /^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+
+
+        if (valorCorreo === "") {
+
+            errorCorreo.textContent =
+                "El correo es obligatorio.";
+
+            correo.classList.add("campo-error");
+
+            formularioValido = false;
+
+        }
+
+        else if (correo.value.length > 100) {
+
+            errorCorreo.textContent =
+                "El correo no puede superar los 100 caracteres.";
+
+            correo.classList.add("campo-error");
+
+            formularioValido = false;
+
+        }
+
+        else if (!regexCorreo.test(valorCorreo)) {
+
+            errorCorreo.textContent =
+                "El correo no pertenece a un dominio permitido.";
+
+            correo.classList.add("campo-error");
+
+            formularioValido = false;
+
+        }
+
+
+        /* VALIDAR COMENTARIO */
+
+        if (comentario.value.trim() === "") {
+
+            errorComentario.textContent =
+                "El comentario es obligatorio.";
+
+            comentario.classList.add("campo-error");
+
+            formularioValido = false;
+
+        }
+
+        else if (comentario.value.length > 500) {
+
+            errorComentario.textContent =
+                "El comentario no puede superar los 500 caracteres.";
+
+            comentario.classList.add("campo-error");
+
+            formularioValido = false;
+
+        }
+
+
+        /* =========================
+           SI TODO ESTÁ CORRECTO
+        ========================== */
+
+        if (formularioValido) {
+
+            mensajeExito.classList.remove("d-none");
+
+            formulario.reset();
+
+            contadorComentario.textContent =
+                "0 / 500 caracteres";
+
+
+            nombre.classList.remove("campo-correcto");
+            correo.classList.remove("campo-correcto");
+            comentario.classList.remove("campo-correcto");
+
+
+            setTimeout(function () {
+
+                mensajeExito.classList.add("d-none");
+
+            }, 4000);
+
+        }
+
+    });
+
+}
