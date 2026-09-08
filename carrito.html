@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Carrito de compras de Game Zone.">
+
+    <title>Carrito de compras | Game Zone</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Nuestro archivo CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <div class="container">
+
+                <!-- Logo de la tienda -->
+
+                <a class="navbar-brand" href="index.html">
+
+                    <img
+                        src="IMG/logo-game-zone.jpeg"
+                        alt="Logo de Game Zone"
+                        class="logo-tienda">
+
+                </a>
+
+                <!-- Botón del menú para celulares -->
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <!-- Opciones del menú -->
+
+                <div
+                    class="collapse navbar-collapse"
+                    id="menuPrincipal">
+
+                    <ul class="navbar-nav ms-lg-4 align-items-lg-center">
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="index.html">
+
+                                Inicio
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="productos.html">
+
+                                Productos
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="nosotros.html">
+
+                                Nosotros
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="blogs.html">
+
+                                Blog
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="contacto.html">
+
+                                Contacto
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link active"
+                                href="carrito.html">
+
+                                🛒 Carrito
+
+                                <span
+                                    id="cantidad-carrito"
+                                    class="badge bg-warning text-dark">
+
+                                    0
+
+                                </span>
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="btn btn-warning ms-lg-2 mt-2 mt-lg-0"
+                                href="login.html">
+
+                                Iniciar sesión
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main>
+
+        <!-- Encabezado de la página -->
+
+        <section class="encabezado-pagina text-white text-center py-5">
+
+            <div class="container">
+
+                <h1>Carrito de compras</h1>
+
+                <p>
+                    Revisa tus productos antes de finalizar la compra.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Productos y resumen del carrito -->
+
+        <section class="container py-5">
+
+            <div class="row g-4">
+
+                <!-- Productos generados con JavaScript -->
+
+                <div class="col-lg-8">
+
+                    <h2 class="mb-4">
+                        Productos seleccionados
+                    </h2>
+
+                    <div id="productos-carrito">
+
+                        <!-- JavaScript mostrará aquí los productos -->
+
+                    </div>
+
+                </div>
+
+                <!-- Resumen de la compra -->
+
+                <aside class="col-lg-4">
+
+                    <div class="card shadow-sm">
+
+                        <div class="card-body">
+
+                            <h2 class="h4 mb-4">
+                                Resumen de la compra
+                            </h2>
+
+                            <div
+                                class="d-flex justify-content-between align-items-center mb-4">
+
+                                <span class="fs-5">
+                                    Total:
+                                </span>
+
+                                <strong
+                                    id="total-carrito"
+                                    class="fs-4 text-danger">
+
+                                    $0
+
+                                </strong>
+
+                            </div>
+
+                            <div class="d-grid gap-3">
+
+                                <button
+                                    type="button"
+                                    class="btn btn-warning btn-lg"
+                                    onclick="finalizarCompra()">
+
+                                    Finalizar compra
+
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-danger"
+                                    onclick="vaciarCarrito()">
+
+                                    Vaciar carrito
+
+                                </button>
+
+                                <a
+                                    href="productos.html"
+                                    class="btn btn-outline-dark">
+
+                                    Seguir comprando
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="pie-pagina text-white py-5">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <h2 class="h4">
+                        Game Zone
+                    </h2>
+
+                    <p>
+                        Tienda online de videojuegos,
+                        consolas y accesorios gamer.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <h2 class="h4">
+                        Enlaces
+                    </h2>
+
+                    <ul class="list-unstyled">
+
+                        <li>
+
+                            <a href="index.html">
+                                Inicio
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="productos.html">
+                                Productos
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="nosotros.html">
+                                Nosotros
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="contacto.html">
+                                Contacto
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <h2 class="h4">
+                        Contacto
+                    </h2>
+
+                    <p>
+                        Correo: contacto@gamezone.cl
+                    </p>
+
+                    <p>
+                        Teléfono: +56 9 1234 5678
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="text-center mb-0">
+                Game Zone © 2026 - Proyecto académico Duoc UC
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Nuestro JavaScript -->
+
+    <script src="JS/main.js"></script>
+
+</body>
+
+</html>
