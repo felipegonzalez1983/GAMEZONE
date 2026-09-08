@@ -557,3 +557,271 @@ textarea.form-control {
         font-size: 30px;
     }
 }
+
+/* =========================================
+   FORMULARIO DE CONTACTO
+========================================= */
+
+.mensaje-error {
+    margin-top: 5px;
+    color: #dc3545;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+.campo-error {
+    border: 2px solid #dc3545 !important;
+}
+
+.campo-correcto {
+    border: 2px solid #198754 !important;
+}
+
+/* =========================================
+   EQUIPO DE DESARROLLADORES
+========================================= */
+
+.desarrollador-icono {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   BLOGS
+========================================= */
+
+.blogs {
+    background-color: #f8f9fa;
+}
+
+.blogs h2 {
+    font-weight: bold;
+}
+
+
+/* =========================================
+   TARJETAS DE BLOG
+========================================= */
+
+.tarjeta-blog {
+    height: 100%;
+    overflow: hidden;
+
+    background-color: white;
+
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+
+.tarjeta-blog:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   IMAGEN DEL BLOG
+========================================= */
+
+.blog-imagen {
+    width: 100%;
+    height: 280px;
+
+    overflow: hidden;
+
+    background-color: #eeeeee;
+}
+
+
+.blog-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.3s;
+}
+
+
+.tarjeta-blog:hover .blog-imagen img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   CONTENIDO DEL BLOG
+========================================= */
+
+.blog-contenido {
+    padding: 30px;
+}
+
+
+.blog-contenido h3 {
+    margin-bottom: 15px;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #212529;
+}
+
+
+.blog-contenido p {
+    margin-bottom: 25px;
+
+    color: #666666;
+
+    line-height: 1.6;
+}
+
+
+.blog-contenido .btn {
+    padding: 10px 22px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   BLOGS EN CELULAR
+========================================= */
+
+@media (max-width: 768px) {
+
+    .blog-imagen {
+        height: 230px;
+    }
+
+    .blog-contenido {
+        padding: 25px;
+    }
+
+    .blog-contenido h3 {
+        font-size: 22px;
+    }
+
+}
+
+/* =========================================
+   DETALLE DE BLOG
+========================================= */
+
+.detalle-blog {
+    background-color: #f8f9fa;
+}
+
+
+.tarjeta-detalle-blog {
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+
+}
+
+
+/* IMAGEN */
+
+.imagen-detalle-blog {
+
+    display: block;
+
+    width: 100%;
+
+    height: 450px;
+
+    object-fit: cover;
+
+}
+
+
+/* CONTENIDO */
+
+.contenido-detalle-blog {
+
+    padding: 40px;
+
+}
+
+
+.contenido-detalle-blog h2 {
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+
+    color: #212529;
+
+}
+
+
+.contenido-detalle-blog p {
+
+    color: #555555;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* BOTÓN */
+
+.contenido-detalle-blog .btn {
+
+    font-weight: bold;
+
+    padding: 10px 20px;
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .imagen-detalle-blog {
+
+        height: 280px;
+
+    }
+
+    .contenido-detalle-blog {
+
+        padding: 25px;
+
+    }
+
+    .contenido-detalle-blog h2 {
+
+        font-size: 24px;
+
+    }
+
+    .contenido-detalle-blog p {
+
+        font-size: 16px;
+
+    }
+
+}
