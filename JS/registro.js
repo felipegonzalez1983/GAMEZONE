@@ -178,7 +178,7 @@ formulario.addEventListener("submit", function (evento) {
     /* Validar correo */
 
     const formatoCorreo =
-        /^[a-zA-Z0-9._%+-]+@(duocuc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+        /^[a-zA-Z0-9._%+-]+@(duocuc\.cl|duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
 
     if (!formatoCorreo.test(correo)) {
 
