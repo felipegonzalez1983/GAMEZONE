@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Administrar usuarios | Game Zone</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <aside
+                class="col-md-3 col-lg-2 bg-dark text-white min-vh-100 p-4">
+
+                <h2 class="text-warning">
+                    Game Zone
+                </h2>
+
+                <p>Administración</p>
+
+                <hr>
+
+                <nav>
+
+                    <ul class="nav flex-column">
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link text-white"
+                                href="index.html">
+
+                                Inicio
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link text-white"
+                                href="productos.html">
+
+                                Productos
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link text-warning"
+                                href="usuarios.html">
+
+                                Usuarios
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link text-white"
+                                href="../index.html">
+
+                                Volver a la tienda
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </aside>
+
+            <main class="col-md-9 col-lg-10 p-5">
+
+                <div
+                    class="d-flex justify-content-between align-items-center mb-4">
+
+                    <div>
+
+                        <h1>Administrar usuarios</h1>
+
+                        <p>
+                            Usuarios registrados en Game Zone.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="nuevo-usuario.html"
+                        class="btn btn-warning">
+
+                        Nuevo usuario
+
+                    </a>
+
+                </div>
+
+                <div class="table-responsive">
+
+                    <table
+                        class="table table-bordered table-striped">
+
+                        <thead class="table-dark">
+
+                            <tr>
+                                <th>RUT</th>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Rol</th>
+                                <th>Acciones</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tabla-usuarios">
+
+                            <tr>
+                                <td>12.345.678-9</td>
+                                <td>Felipe González</td>
+                                <td>felipe@gmail.com</td>
+                                <td>Cliente</td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary">
+
+                                        Editar
+
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-danger">
+
+                                        Eliminar
+
+                                    </button>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>11.111.111-1</td>
+                                <td>Administrador</td>
+                                <td>admin@gmail.com</td>
+                                <td>Administrador</td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary">
+
+                                        Editar
+
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-danger">
+
+                                        Eliminar
+
+                                    </button>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="../JS/lista-usuarios.js"></script>
+
+</body>
+
+</html>
